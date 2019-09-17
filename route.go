@@ -21,6 +21,8 @@ type Route struct {
 	buildOnly bool
 	// The name used to build URLs.
 	name string
+	// documentation for the route.
+	doc string
 	// Error resulted from building a route.
 	err error
 
@@ -151,6 +153,19 @@ func (r *Route) Name(name string) *Route {
 // GetName returns the name for the route, if any.
 func (r *Route) GetName() string {
 	return r.name
+}
+
+// Doc -----------------------------------------------------------------------
+
+// Doc sets the documentation for the route.
+func (r *Route) Doc(doc string) *Route {
+	r.doc = doc
+	return r
+}
+
+// GetDoc returns the documentation for the route, if any.
+func (r *Route) GetDoc() string {
+	return r.doc
 }
 
 // ----------------------------------------------------------------------------
